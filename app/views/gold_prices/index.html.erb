@@ -1,0 +1,22 @@
+<h1>Altın ve Döviz Kurları</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Para Birimi</th>
+      <th>Alış Fiyatı</th>
+      <th>Satış Fiyatı</th>
+      <th>Değişim (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @currencies.each do |currency, data| %>
+      <tr>
+        <td><%= currency %></td>
+        <td><%= data['alis'] %></td>
+        <td><%= data['satis'] %></td>
+        <td><%= data['degisim'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
