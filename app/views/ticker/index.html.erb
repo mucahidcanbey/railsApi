@@ -1,0 +1,38 @@
+<h1 class="text-center mb-5">BTCTurk Ticker</h1>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="bg-danger text-white">
+      <tr>
+        <th>Pair</th>
+        <th>Last</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Bid</th>
+        <th>Ask</th>
+        <th>Open</th>
+        <th>Volume</th>
+        <th>Average</th>
+        <th>Daily</th>
+        <th>Daily Percent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tickers.each do |ticker| %>
+        <tr>
+          <td><%= ticker['pair'] %></td>
+          <td><%= ticker['last'] %></td>
+          <td><%= ticker['high'] %></td>
+          <td><%= ticker['low'] %></td>
+          <td><%= ticker['bid'] %></td>
+          <td><%= ticker['ask'] %></td>
+          <td><%= ticker['open'] %></td>
+          <td><%= ticker['volume'] %></td>
+          <td><%= ticker['average'] %></td>
+          <td class="<%= ticker['daily'].to_f > 0 ? 'text-success' : 'text-danger' %>"><%= ticker['daily'] %></td>
+          <td class="<%= ticker['dailyPercent'].to_f > 0 ? 'text-success' : 'text-danger' %>"><%= ticker['dailyPercent'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
